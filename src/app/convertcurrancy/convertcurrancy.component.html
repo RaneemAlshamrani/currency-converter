@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row mt-s">
+        <div class="col">
+            <div class="card mt-5">
+                <div class="card-body">
+                <h3 class="text-center"><span class="bddge bd-danger">تحويل العملات</span></h3>
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label text-center">من</label>
+                        <select class="form-select" [(ngModel)]="from_convert">
+                        <option value={{item.Currency_code}} *ngFor="let item of currancy">{{item.country_name}}</option>
+                       </select>
+                        
+                    </div>
+                    <div class="col">
+                        <label class="form-label text-center">الى</label>
+                        <select class="form-select" [(ngModel)]="to_convert">
+                            <option value={{item.Currency_code}} *ngFor="let item of currancy">{{item.country_name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col text-center">
+                        <label  class="form-label">ادخل المبلغ </label>
+                        <input type="text" class="form-control"[(ngModel)]="amount">
+
+
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col text-center">
+                        <button class="btn btn-info" (click)="get_currancy()">تحويل</button>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <h4 class="text-center alert text-success">{{result}}</h4>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+    </div>
+</div>
+</div>
